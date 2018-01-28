@@ -1,0 +1,9 @@
+.box-header{
+  background: lightgray;
+  border-bottom: 1px solid black;
+  padding: 20px;
+}
+
+.box-content{
+  background: darkkhaki;
+}

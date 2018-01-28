@@ -1,6 +1,23 @@
 <section class="box-header">
-  <app-title></app-title>
-  <app-welcome></app-welcome>
-  <app-settings></app-settings>
+  <div class="column">
+    <div class="title">
+      <app-title></app-title>
+    </div>
+    <div class="welcome">
+      <app-welcome [welcomeName]="login"></app-welcome>
+    </div>
+  </div>
+  <div class="column">
+    <div class="settings">
+      <app-settings></app-settings>
+    </div>
+    <div class="login" *ngIf="login.length === 0">
+      <input type="text" name="userName" ngModel #userName>
+      <button (click)="logUser(userName.value)">Login</button>
+    </div>
+    <div class="login" *ngIf="login.length !== 0">
+      Jesteś zalogowany jako {{login}}
+      <button (click)="logOut()">Wyloguj</button>
+    </div>
+  </div>
 </section>
-

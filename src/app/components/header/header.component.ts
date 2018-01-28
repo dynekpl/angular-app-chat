@@ -9,9 +9,13 @@ import {SettingsComponent} from '../settings/settings.component';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent{
-  title = 'Krzyś';
+  login = '';
 
-  hello(age = 20){
-    return `Witaj ${this.title}, ${age} lat`;
+  logUser(user){
+    this.login = user;
+  }
+
+  logOut(){
+    this.login = '';
   }
 }
