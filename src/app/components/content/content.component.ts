@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ChatComponent} from '../chat/chat.component';
 
 @Component({
@@ -6,6 +6,14 @@ import {ChatComponent} from '../chat/chat.component';
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css']
 })
-export class ContentComponent{
+export class ContentComponent {
+
+  history = [];
+
+  newMessage(newMsg) {
+    if (newMsg.trim() !== '') {
+      this.history.push(newMsg);
+    }
+  }
 
 }

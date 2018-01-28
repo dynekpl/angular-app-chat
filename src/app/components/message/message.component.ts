@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-message',
@@ -7,4 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageComponent{
 
+  msg = '';
+
+  @Output()
+  outMsg = new EventEmitter();
+
+  saveMsg(message){
+    this.msg = message.target.value;
+  }
+
+  sendMessage(){
+    this.outMsg.emit(this.msg);
+    this.msg = '';
+  }
 }

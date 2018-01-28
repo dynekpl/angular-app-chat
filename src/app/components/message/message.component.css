@@ -1,0 +1,29 @@
+.box-messages {
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.box-messages input {
+  padding: 10px;
+  outline: 0;
+  border-radius: 4px;
+  border: 1px solid;
+  width: 100%;
+}
+
+.box-messages button {
+  padding: 10px;
+  background: darkcyan;
+  border-radius: 4px;
+  border: 1px solid;
+  text-transform: uppercase;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.box-messages button:hover {
+  opacity: 0.8;
+}

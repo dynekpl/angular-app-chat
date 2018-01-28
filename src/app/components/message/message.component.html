@@ -1,3 +1,4 @@
-<p>
-  message works!
-</p>
+<div class="box-messages">
+  <input type="text" value="{{msg}}" (keyup)="saveMsg($event)">
+  <button (click)="sendMessage()">Wyślij</button>
+</div>

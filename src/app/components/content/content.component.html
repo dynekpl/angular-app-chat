@@ -1,5 +1,12 @@
 <div>
-  <app-users></app-users>
-  <app-chat></app-chat>
-  <app-message></app-message>
+
+  <div>
+    <ul *ngIf="history.length">
+      <li *ngFor="let message of history">
+        {{message}}
+      </li>
+    </ul>
+  </div>
+
+  <app-message (outMsg)="newMessage($event)"></app-message>
 </div>
