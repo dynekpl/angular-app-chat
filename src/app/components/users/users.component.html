@@ -1,3 +1,6 @@
-<p>
-  users works!
-</p>
+<div>
+    <strong *ngFor="let user of users">
+      <span class="{{ user.status }}"></span>
+      {{user.nick}}<br>
+    </strong>
+</div>

@@ -1,0 +1,14 @@
+.active{
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: forestgreen;
+  border-radius: 50%;
+}
+.disable{
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: red;
+  border-radius: 50%;
+}

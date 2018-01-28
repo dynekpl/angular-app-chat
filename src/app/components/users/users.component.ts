@@ -7,5 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent{
 
+  users = [{
+    nick: "Krzys1",
+    city: "Kraków",
+    status: "active"
+  },
+    {
+      nick: "Krzyś2",
+      city: "Sandomierz",
+      status: "disable"
+    }];
 
 }
