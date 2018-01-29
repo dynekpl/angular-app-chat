@@ -12,6 +12,8 @@ import { ContentComponent } from './components/content/content.component';
 import { UsersComponent } from './components/users/users.component';
 import { MessageComponent } from './components/message/message.component';
 
+import {DataService} from './services/data.service';
+import {DataServiceRx} from './services/datarx.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,7 @@ import { MessageComponent } from './components/message/message.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [DataService, DataServiceRx],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
