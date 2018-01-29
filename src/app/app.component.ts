@@ -16,6 +16,8 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(@Inject(DataServiceRx) private DataServiceRx) {
   };
 
+  newMsg='';
+
   ngOnInit(): void {
     this.sub = this.DataServiceRx.getMessage().subscribe(res => {
       console.log(res);
@@ -27,8 +29,8 @@ export class AppComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe();
   }
 
-  newMessage() {
-    this.DataServiceRx.sendMessage({data: 'dane z przeglądarki'});
+  sendMessageToServer(message) {
+    this.DataServiceRx.sendMessage({data: message});
   }
 
 }

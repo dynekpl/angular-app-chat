@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ChatComponent} from '../chat/chat.component';
 
 @Component({
@@ -10,10 +10,18 @@ export class ContentComponent {
 
   history = [];
 
+  @Output()
+  msgToServer = new EventEmitter;
+
   newMessage(newMsg) {
     if (newMsg.trim() !== '') {
       this.history.push(newMsg);
+      this.sendToServer(newMsg);
     }
+  }
+
+  private sendToServer(newMsg) {
+    this.msgToServer.emit(newMsg);
   }
 
 }

@@ -12,8 +12,8 @@ export class MessageComponent{
   @Output()
   outMsg = new EventEmitter();
 
-  saveMsg(message){
-    this.msg = message.target.value;
+  saveMsgFromInput(inMsg){
+    this.msg = inMsg.target.value;
   }
 
   sendMessage(){
