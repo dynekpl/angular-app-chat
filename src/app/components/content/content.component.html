@@ -1,13 +1,19 @@
-<div>
-<app-users></app-users>
-
-  <div>
-    <ul *ngIf="history.length">
-      <li *ngFor="let msg of history">
-        {{msg}}
-      </li>
-    </ul>
+<section class="box-content">
+  <div class="column">
+    <div class="chat">
+      <ul *ngIf="history.length">
+        <li *ngFor="let msg of history">
+          {{msg}}
+        </li>
+      </ul>
+    </div>
+    <div class="message">
+      <app-message (outMsg)="newMessage($event)"></app-message>
+    </div>
   </div>
-
-  <app-message (outMsg)="newMessage($event)"></app-message>
-</div>
+  <div class="column">
+    <div class="users">
+      <app-users></app-users>
+    </div>
+  </div>
+</section>

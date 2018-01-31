@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ChatComponent} from '../chat/chat.component';
+import {Message} from '../../model/message.model';
 
 @Component({
   selector: 'app-content',
@@ -14,10 +15,11 @@ export class ContentComponent {
   msgToServer = new EventEmitter;
 
   newMessage(newMsg) {
-    if (newMsg.trim() !== '') {
-      this.history.push(newMsg);
-      this.sendToServer(newMsg);
-    }
+    this.history.push(newMsg);
+    // if (newMsg.trim() !== '') {
+    //   this.history.push(newMsg);
+    //   this.sendToServer(newMsg);
+    // }
   }
 
   private sendToServer(newMsg) {
