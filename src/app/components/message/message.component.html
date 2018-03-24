@@ -1,4 +1,4 @@
 <div class="box-messages">
-  <input type="text" value="{{msg}}" (keyup)="saveMsgFromInput($event)">
-  <button (click)="sendMessage()">Wyślij</button>
+  <input type="text" value="{{text}}" (keyup)="saveMsgFromInput($event)">
+  <button (click)="sendMessage()" [disabled]="sender.length===0">Wyślij</button>
 </div>

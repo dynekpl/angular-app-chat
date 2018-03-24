@@ -1,4 +1,4 @@
-import {Component, OnInit, OnDestroy, Inject} from '@angular/core';
+import {Component, OnInit, OnDestroy, Inject, EventEmitter} from '@angular/core';
 
 import {HeaderComponent} from './components/header/header.component';
 
@@ -10,27 +10,20 @@ import {Subscription} from 'rxjs/Subscription';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent {
   sub: Subscription;
 
   constructor(@Inject(DataServiceRx) private DataServiceRx) {
   };
 
-  newMsg='';
+  user='';
 
-  ngOnInit(): void {
-    this.sub = this.DataServiceRx.getMessage().subscribe(res => {
-      console.log(res);
-      //this.newMessage();
-    });
+  saveLogin(login){
+    this.user = login;
   }
 
-  ngOnDestroy(): void {
-    this.sub.unsubscribe();
-  }
-
-  sendMessageToServer(message) {
-    this.DataServiceRx.sendMessage({data: message});
+  sendMessageToServer(msgToServer) {
+    this.DataServiceRx.sendMessage({data: msgToServer});
   }
 
 }

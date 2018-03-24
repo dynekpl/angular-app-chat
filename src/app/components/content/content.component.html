@@ -1,13 +1,24 @@
-<div>
-<app-users></app-users>
-
-  <div>
-    <ul *ngIf="history.length">
-      <li *ngFor="let msg of history">
-        {{msg}}
-      </li>
-    </ul>
+<section class="box-content">
+  <div class="column">
+    <div class="chat">
+      <div *ngIf="!login.length" class="notification">
+        Musisz być zalogowany aby wysłać wiadomość
+      </div>
+      <div *ngIf="login.length">
+        <ul *ngIf="history.length">
+          <div *ngFor="let msg of history" [class.inMsg]="msg.author!==login">
+            {{msg.author}} ({{msg.timestamp}}), {{msg.text}}
+          </div>
+        </ul>
+      </div>
+    </div>
+    <div class="message">
+      <app-message (outMsg)="newMessage($event)" [sender]="login"></app-message>
+    </div>
   </div>
-
-  <app-message (outMsg)="newMessage($event)"></app-message>
-</div>
+  <div class="column">
+    <div class="users">
+      <app-users></app-users>
+    </div>
+  </div>
+</section>

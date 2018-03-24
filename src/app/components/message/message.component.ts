@@ -8,16 +8,33 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class MessageComponent{
 
   msg = '';
+  text = '';
+
+  @Input()
+  sender = '';
 
   @Output()
   outMsg = new EventEmitter();
 
-  saveMsgFromInput(inMsg){
-    this.msg = inMsg.target.value;
+  saveMsgFromInput(inMsg) {
+    this.text = inMsg.target.value;
   }
 
-  sendMessage(){
+  sendMessage() {
+    this.msg = this.sender + '|';
+    this.addTimestamp();
     this.outMsg.emit(this.msg);
+    this.clearMsg();
+  }
+
+  addTimestamp() {
+    const currentTime = new Date();
+    const timeStamp = ((currentTime.getHours() < 10) ? '0' : '') + currentTime.getHours() + ':' + ((currentTime.getMinutes() < 10) ? '0' : '') + currentTime.getMinutes();
+    this.msg += timeStamp + '|' + this.text;
+  }
+
+  private clearMsg() {
     this.msg = '';
+    this.text = '';
   }
 }

@@ -1,9 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <section class="box-header">
-  <app-header></app-header>
+  <app-header (loginEmitter)="saveLogin($event)"></app-header>
 </section>
 <section class="box-content">
-  <app-content (msgToServer)="sendMessageToServer($event)"></app-content>
+  <app-content (msgToServer)="sendMessageToServer($event)" [login]="user"></app-content>
 </section>
 
 

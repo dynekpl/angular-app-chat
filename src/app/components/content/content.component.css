@@ -1,0 +1,33 @@
+.box-content{
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+
+}
+
+.chat {
+  background: white;
+  height: 200px;
+  width: 500px;
+  border-radius: 4px;
+  border: 1px solid;
+  margin: 10px 10px 10px 10px;
+}
+
+.notification{
+  text-align: center;
+  margin-top: 25px;
+}
+
+.message {
+}
+
+.inMsg{
+  text-align: right;
+  margin-right: 20px;
+}
+
+.users {
+}

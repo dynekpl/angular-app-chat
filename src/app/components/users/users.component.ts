@@ -8,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class UsersComponent{
 
   users = [{
-    nick: "Krzys1",
+    nick: "BOT",
     city: "Kraków",
     status: "active"
   },
     {
-      nick: "Krzyś2",
+      nick: "Admin",
       city: "Sandomierz",
       status: "disable"
     }];

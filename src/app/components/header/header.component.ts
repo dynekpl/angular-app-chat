@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, EventEmitter, Inject, OnInit, Output} from '@angular/core';
 import {TitleComponent} from '../title/title.component';
 import {WelcomeComponent} from '../welcome/welcome.component';
 import {SettingsComponent} from '../settings/settings.component';
@@ -16,11 +16,16 @@ export class HeaderComponent{
 
   login = '';
 
+  @Output()
+  loginEmitter = new EventEmitter;
+
   logUser(user){
     this.login = user;
+    this.loginEmitter.emit(this.login);
   }
 
   logOut(){
     this.login = '';
+    this.loginEmitter.emit(this.login);
   }
 }
