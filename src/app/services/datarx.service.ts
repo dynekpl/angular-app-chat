@@ -19,6 +19,7 @@ export class DataServiceRx{
     this.socket = socketIo('http://localhost:8080');
 
     this.socket.on('message', res => {
+      console.log(res.data.data);
       this.observer.next(res.data);
     });
 
@@ -31,7 +32,7 @@ export class DataServiceRx{
 
   private createObservable() : Observable<any> {
     return new Observable<any>(observer => {
-      this.observer = this.observer;
+      this.observer = observer;
     });
   }
 }
